@@ -1,6 +1,5 @@
 #!/bin/bash
 CONFIG_FILE="./branchmark.config"
-LOG_FILE="./branchmark.log"
 set -euo pipefail
 IFS=$'\n\t'
 
