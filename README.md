@@ -6,6 +6,13 @@ Useful for benchmarking different versions of the same program.
 
 ## Installing
 
+Inside your repo:
+
+```
+wget https://raw.githubusercontent.com/hilbigan/branchmark/main/branchmark.config
+wget https://raw.githubusercontent.com/hilbigan/branchmark/main/branchmark.sh
+```
+
 
 ## Configuration
 
