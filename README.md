@@ -8,9 +8,11 @@ Useful for benchmarking different versions of the same program.
 
 Inside your repo:
 
-```
-wget https://raw.githubusercontent.com/hilbigan/branchmark/main/branchmark.config
+```sh
 wget https://raw.githubusercontent.com/hilbigan/branchmark/main/branchmark.sh
+chmod +x branchmark.sh
+# optional: get config template
+wget https://raw.githubusercontent.com/hilbigan/branchmark/main/branchmark.config
 ```
 
 
