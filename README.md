@@ -31,7 +31,7 @@ filter="*"
 
 # Function to be benchmarked
 function run {
-    echo "Bye"
+    echo "Hello"
     sleep 1
     echo "World!"
 }
