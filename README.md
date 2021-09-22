@@ -1,6 +1,6 @@
 # "branchmark"
 
-Small shell script that checks out several branches and runs some preconfigured commands
+Small shell script that checks out several git branches and runs some preconfigured commands
 on each of them.
 Useful for benchmarking different versions of the same program.
 
