@@ -2,6 +2,7 @@
 CONFIG_FILE="./branchmark.config"
 set -euo pipefail
 IFS=$'\n\t'
+cd "$(dirname "$0")"
 
 function log {
     echo -n "[branchmark] "
