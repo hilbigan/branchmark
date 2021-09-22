@@ -3,16 +3,25 @@ CONFIG_FILE="./branchmark.config"
 set -euo pipefail
 IFS=$'\n\t'
 
+function log {
+    echo -n "[branchmark] "
+    echo "$@"
+}
+
+ORIGINAL_BRANCH=$(git branch --show-current)
+log "Original branch is ${ORIGINAL_BRANCH}."
 source "$CONFIG_FILE"
 
-echo "Benchmarking ${#branches[@]} branches..."
+log "Benchmarking ${#branches[@]} branches..."
 
-for name in ${branches[@]}; do
+for name in "${branches[@]}"; do
     if git checkout "$name" >/dev/null 2>&1; then
-        echo "*** Running on branch $name ***"
-        time (run | egrep --line-buffered "${filter}")
-        echo "*** End run on $name ***"
+        log "*** Running on branch $name ***"
+        time (run | grep -E --line-buffered "${filter}") || true
+        log "*** End run on $name ***"
     else
-        echo "Failed to checkout $name, skipping."; 
+        log "Failed to checkout $name, skipping."; 
     fi
 done
+
+git checkout "$ORIGINAL_BRANCH"
